@@ -15,8 +15,8 @@ module.exports = {
     "static": {
         "start"         :   "",                         // here use relative path
         "test"          :   "",
-        "pre"           :   "http://static.v2ex.com/",// here use CDN domain
-        "release"       :   "http://static.v2ex.com/" // here use CDN domain
+        "pre"           :   "http://static.v2rx.com/",// here use CDN domain
+        "release"       :   "http://static.v2rx.com/" // here use CDN domain
     },
 
     // API base entry
@@ -24,8 +24,8 @@ module.exports = {
     "api": {
         "start"         :   "",                         // local api base entry
         "test"          :   "",
-        "pre"           :   "http://wx.v2ex.com",     // online api base entry
-        "release"       :   "http://wx.v2ex.com"
+        "pre"           :   "http://wx.v2rx.com",     // online api base entry
+        "release"       :   "http://wx.v2rx.com"
     },
 
     "globals": {
@@ -37,7 +37,7 @@ module.exports = {
     // dir alias, could use globally, despite of CWD
     "alias": {
         "scss"          :   "scss",
-        "v2ex"          :   "components",
+        "v2rx"          :   "components",
         "utils"         :   "utils"
     },
 
