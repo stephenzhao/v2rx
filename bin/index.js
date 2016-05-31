@@ -2,11 +2,11 @@
 
 require('shelljs/global');
 
-var program = require('program'),
+var program = require('commander'),
     path = require('path'),
     task = require('./utils/task'),
     cli  = require('./utils/cli'),
-    pkgs = require('../packages.json'),
+    pkgs = require('../package.json'),
     v2rx = require('./config'),
     CWD  = process.cwd();
 var __mode;

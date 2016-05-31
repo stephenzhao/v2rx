@@ -1,7 +1,7 @@
 var path = require('path'),
     fs   = require('fs'),
     CWD  = process.cwd();
-    defaultConfig = require('./v2ex.config.js');
+    defaultConfig = require('./v2rx.config.js');
 
 function extend(target, source){
     var hasOwnProperty = {}.hasOwnProperty;
@@ -42,13 +42,13 @@ function isExists(filename) {
 module.exports = {
     getConfig: function () {
         if (this.hasConfig()) {
-            var filepath = path.resolve(CWD, 'v2ex.config.js');
+            var filepath = path.resolve(CWD, 'v2rx.config.js');
             var config = require(filepath);
             return extend(defaultConfig, config);
         }
         return defaultConfig;
     },
     hasConfig: function () {
-        return isExists('v2ex.config.js');
+        return isExists('v2rx.config.js');
     }
 };

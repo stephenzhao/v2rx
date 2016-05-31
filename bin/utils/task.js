@@ -2,7 +2,6 @@
 require('shelljs/global');
 var path = require('path'),
     fs = require('fs'),
-    template = require('../templates'),
     config = require('../config'),
     server = require('./server'),
     v2ex = config.getConfig(),
@@ -78,5 +77,8 @@ module.exports = {
 
         cp('-R', path.resolve(__dirname, '..', 'templates', 'app-redux/*'), path.resolve(CWD, name));
         console.log('项目', name, '创建成功');
+    },
+    cancel: function () {
+        exec('ctrl c');
     }
 }

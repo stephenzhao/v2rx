@@ -9,11 +9,33 @@ function isExists(name) {
 }
 
 var tasks = {
+    "cancel": function () {
+        process.exit();
+    },
     "upgrade": function() {
         task.upgrade();
     },
     "start": function() {
         task.start();
+    },
+    "init": function(){
+        inquirer.prompt([{
+            type: 'input',
+            name: 'appName',
+            message: '请输入项目的名称: [英文]',
+            validate: function(value) {
+                if(isExists(value)) {
+                    return "该文件已存在, 换一个名字吧";
+                }
+                if(!value && !value.length) {
+                    return "Pepper 需要您提供项目名称";
+                }
+
+                return true;
+            }
+        }], function( answers ) {
+            task['init-redux'](answers.appName);
+        })
     },
     "build": function() {
         var modes = {
@@ -46,15 +68,26 @@ var options = [{
     type: "list",
     name: "task",
     message: "选择要执行的任务: ",
-    choices: [{
+    choices: [
+    {
+        name: '初始化项目es6 + react + react-router + redux',
+        value: 'init'
+    },
+    {
         name: '项目打包',
         value: 'build'
-    }, {
+    },
+    {
         name: '开发调试',
         value: 'start'
-    }, {
+    },
+    {
         name: '升级v2ex',
         value: 'upgrade'
+    },
+    {
+        name: '退出',
+        value: 'cancel'
     }]
 }]
 
