@@ -15,8 +15,8 @@ module.exports = {
     "static": {
         "start"         :   "",                    // here use relative path
         "test"          :   "",
-        "pre"           :   "//static.wepiao.com/",// here use CDN domain
-        "release"       :   "//static.wepiao.com/" // here use CDN domain
+        "pre"           :   "//static.v2rx.com/",// here use CDN domain
+        "release"       :   "//static.v2rx.com/" // here use CDN domain
     },
 
     // globals
@@ -24,15 +24,15 @@ module.exports = {
         // config `mock.js` for CROS solution
         "static_api": {
             "start"     :   "",                    // local api base entry
-            "test"      :   "//m.wepiao.com",
-            "pre"       :   "//m.wepiao.com",      // online api base entry
-            "release"   :   "//m.wepiao.com"
+            "test"      :   "//m.v2rx.com",
+            "pre"       :   "//m.v2rx.com",      // online api base entry
+            "release"   :   "//m.v2rx.com"
         },
-        "api": {  
+        "api": {
           "start"       :   "",
           "test"        :   "",
-          "pre"         :   "//api.wepiao.com",
-          "release"     :   "//api.wepiao.com"
+          "pre"         :   "//api.v2rx.com",
+          "release"     :   "//api.v2rx.com"
       }
     },
 
@@ -42,7 +42,7 @@ module.exports = {
     // dir alias, could use globally, despite of CWD
     "alias": {
         "scss"          :   "scss",
-        "wepiao"        :   "components",
+        "components"    :   "components",
         "utils"         :   "utils",
         "assets"        :   "assets",
         "app"           :   "app"
@@ -79,7 +79,7 @@ module.exports = {
 
     // switch template ES mode, ['es5' or 'es6']
     "esmode": "es6",
-    
+
     // switch for transfering assets dir to dist when build
     "transfer_assets": false,
 

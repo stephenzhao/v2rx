@@ -11,9 +11,9 @@ function extend(target, source){
                 for(var al in source[key]) {
                     target[key][al] = source[key][al];
                 }
-                return ;
+            } else {
+                target[key] = source[key];
             }
-            target[key] = source[key];
         }
     }
 
@@ -31,7 +31,6 @@ function extend(target, source){
         var value = target.alias[key];
         target.alias[key] = path.join(target.base, value);
     }
-
     return target;
 }
 
