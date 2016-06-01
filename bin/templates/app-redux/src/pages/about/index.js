@@ -9,11 +9,9 @@ export default class About extends React.Component {
         return (
             <div className={styles.about}>
                 <div className={styles.desc}>
-                    Demo powered by pepper
+                    Demo powered by v2rx
                 </div>
-                <div className={styles.desc}>
-                    FEI Team @ Wepiao
-                </div>
+
                 <ul>
                     <li>
                         <Link to="/" className={styles.link}>Back Home</Link>
