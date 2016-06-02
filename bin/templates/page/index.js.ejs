@@ -1,0 +1,36 @@
+import styles from './<%=name.toLowerCase()%>';
+// import { component_name } from 'wepiao'
+
+export default class <%= name[0].toUpperCase() + name.slice(1) %> extends React.Component {
+
+    static propTypes = {
+
+    }
+
+    static defaultProps = {
+
+    }
+
+    render() {
+        return (<% if (css_modules) { %>
+            <div className={styles['<%= name[0].toUpperCase() + name.slice(1) %>']}>
+        <% } else {  %>
+            <div className='<%= name[0].toUpperCase() + name.slice(1) %>'>
+        <% } %>        some content ...
+            </div>
+        )
+    }
+}
+
+/*
+ *  after export the page, edit ../index.js, add the following code
+ *
+ *  import <%= name[0].toUpperCase() + name.slice(1) %> from 'react-proxy?name=<%= name %>!./<%= name %>'
+ *
+ *  ...
+ *  <Router history={history}>
+ *      ...
+ *      <Route path="/<%= name %>" component={<%= name[0].toUpperCase() + name.slice(1) %>} />
+ *  </Router>
+ *
+ */

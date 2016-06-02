@@ -1,0 +1,34 @@
+import styles from './<%=name.toLowerCase()%>';
+
+export default class <%= name[0].toUpperCase() + name.slice(1) %> extends React.Component {
+
+    static propTypes = {
+
+    }
+
+    static defaultProps = {
+
+    }
+
+    render() {
+        return (<% if (css_modules) { %>
+            <div className={styles['<%= name.toLowerCase() %>']}>
+    <% } else {  %>
+            <div className='<%= name.toLowerCase() %>'>
+        <% } %>        some content ...
+            </div>
+        )
+    }
+}
+
+/** 
+ *
+ *  // edit components/index.jsx to export current component out.
+ *  
+ *  import <%= name[0].toUpperCase() + name.slice(1) %>  from './<%= name[0].toUpperCase() + name.slice(1) %>'
+ *
+ *  export default {
+ *      ...
+ *      <%= name[0].toUpperCase() + name.slice(1) %>,
+ *  }
+ * */
