@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-// var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
 // var WebpackMD5Hash = require('webpack-md5-hash');
@@ -73,9 +73,9 @@ var PRODUCT_CONFIG = {
         }, {
             test: /\.scss$/,
             include: [path.resolve(CWD, config.base, config.scss)],
-            loader: 'style!css!autoprefixer!sass?' +
+            loader: ExtractTextPlugin.extract( 'style-loader', 'css!autoprefixer!sass?' +
                 'includePaths[]=' + path.resolve(CWD, 'node_modules') +
-                '&includePaths[]=' + path.resolve(CWD, config.base)
+                '&includePaths[]=' + path.resolve(CWD, config.base) )
         }, {
             test: /\.less$/,
             include: [path.resolve(CWD, config.base, config.scss)],
@@ -150,7 +150,7 @@ var PRODUCT_CONFIG = {
 
            return global_defines;
         })()),
-        // new ExtractTextPlugin('css/[name]-[contenthash:8].css'),
+        new ExtractTextPlugin('css/[name]-[contenthash:8].css'),
         // Global modules
         // http://webpack.github.io/docs/shimming-modules.html
         new webpack.ProvidePlugin({

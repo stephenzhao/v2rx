@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-// var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
@@ -118,9 +118,9 @@ var webpackConfig = function(config){
             }, {
                 test: /\.scss$/,
                 include: [path.resolve(CWD, config.base, config.scss)],// extract style import from scss to separate css files
-                loader: 'style!css!autoprefixer!sass?sourceMap&includePaths[]=' + path.resolve(CWD, 'node_modules') +
+                loader: ExtractTextPlugin.extract( 'style-loader', 'css!autoprefixer!sass?sourceMap&includePaths[]=' + path.resolve(CWD, 'node_modules') +
                     '&includePaths[]=' + path.resolve(CWD, 'node_modules') +
-                    '&includePaths[]=' + path.resolve(CWD, config.base)
+                    '&includePaths[]=' + path.resolve(CWD, config.base) )
             }, {
                 test: /\.css$/,
                 exclude: [path.resolve(CWD, config.base, config.scss)],
@@ -209,7 +209,7 @@ var webpackConfig = function(config){
                 children: true // include all chunks
             }),
             // style extract as specified
-            // new ExtractTextPlugin('css/[name]-[contenthash:8].css'),
+            new ExtractTextPlugin('css/[name]-[contenthash:8].css'),
             // Global modules
             // http://webpack.github.io/docs/shimming-modules.html
             new webpack.ProvidePlugin({
