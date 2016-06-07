@@ -1,9 +1,9 @@
 {
     "name": "pepper",
     "version": "0.0.1",
-    "description": "wepiao front end solution",
+    "description": "An front end solution with react",
     "main": "app.js",
-    "author": "FEI@wepiao.com",
+    "author": "Damon",
     "license": "ISC",
     "scripts": {
         "start": "pepper start"
