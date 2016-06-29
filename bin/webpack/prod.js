@@ -79,7 +79,9 @@ var PRODUCT_CONFIG = {
         }, {
             test: /\.less$/,
             include: [path.resolve(CWD, config.base, config.scss)],
-            loader: 'style!css!autoprefixer!less'
+            loader: ExtractTextPlugin.extract( 'style-loader', 'css!autoprefixer!less?' +
+                'includePaths[]=' + path.resolve(CWD, 'node_modules') +
+                '&includePaths[]=' + path.resolve(CWD, config.base) )
         }, {
             test: /\.css$/,
             exclude: [path.resolve(CWD, config.base, config.scss)],

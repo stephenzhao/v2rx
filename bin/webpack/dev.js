@@ -114,7 +114,9 @@ var webpackConfig = function(config){
             }, {
                 test: /\.less$/,
                 include: [path.resolve(CWD, config.base, config.scss)],
-                loader: 'style!css!autoprefixer!less?sourceMap'
+                loader: ExtractTextPlugin.extract( 'style-loader', 'css!autoprefixer!less?sourceMap&' +
+                'includePaths[]=' + path.resolve(CWD, 'node_modules') +
+                '&includePaths[]=' + path.resolve(CWD, config.base) )
             }, {
                 test: /\.scss$/,
                 include: [path.resolve(CWD, config.base, config.scss)],// extract style import from scss to separate css files

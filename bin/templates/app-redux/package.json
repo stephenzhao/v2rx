@@ -1,12 +1,12 @@
 {
-    "name": "pepper",
+    "name": "v2rx",
     "version": "0.0.1",
     "description": "An front end solution with react",
     "main": "app.js",
     "author": "Damon",
     "license": "ISC",
     "scripts": {
-        "start": "pepper start"
+        "start": "v2rx start"
     },
     "dependencies": {
         "classnames": "^1.2.0",
