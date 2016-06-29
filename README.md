@@ -1,6 +1,6 @@
 # v2rx
-Redux的脚手架
 
+A redux generator
 
 ```
 git clone git+https://github.com/stephenzhao/v2rx.git 

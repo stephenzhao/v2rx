@@ -24,4 +24,4 @@ you can config the app through v2rx.config.js
 
 more details at [v2rx doc](https://stephenzhao.github.io/v2rx)
 
-pleasent for your star [v2rx](https://github.com/stephenzhao/v2rx.git )
+Thanks for your star [v2rx](https://github.com/stephenzhao/v2rx.git )
